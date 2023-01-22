@@ -1,6 +1,6 @@
 import { Link } from "@remix-run/react";
 import type { Post } from "@prisma/client";
-import Image from "remix-image";
+import { BaseImage } from "remix-image";
 import dayjs from "dayjs"
 
 import Tags from "~/components/tags";
@@ -17,19 +17,11 @@ export function BlogCard({ post }: BlogCardProps) {
         <article className="flex flex-wrap sm:flex-nowrap bg-panel-light dark:bg-panel-dark p-8 rounded-2xl shadow-l dark:shadow-d mb-12" key={post.slug}>
             <div className="sm:mr-8 mb-8 sm:mb-0">
                 <Link to={`/posts/${post.slug}`}>
-                    <Image
-                        className="rounded-xl w-full"
+                    <BaseImage
+                        className="rounded-xl"
                         loaderUrl="/api/image"
                         src={post.image}
-                        responsive={[
-                            {
-                                size: {
-                                    width: 272,
-                                    height: 272,
-                                },
-                            },
-                        ]
-                        }
+                        width={272}
                     />
                 </Link>
             </div>

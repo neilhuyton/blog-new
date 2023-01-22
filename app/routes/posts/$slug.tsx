@@ -4,7 +4,7 @@ import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { marked } from "marked";
 import invariant from "tiny-invariant";
-import Image from "remix-image";
+import { BaseImage } from "remix-image";
 import Tags from "~/components/tags";
 import { md_gallery } from "~/utils/md-gallery";
 import dayjs from "dayjs"
@@ -37,14 +37,14 @@ export default function PostSlug() {
 
     useEffect(() => {
         md_gallery({
-            'class_name':'lightbox',
+            'class_name': 'lightbox',
         });
     }, [])
 
     return (
         <article className="bg-panel-light dark:bg-panel-dark shadow-l dark:shadow-d p-8 rounded-2xl">
             <figure className="w-full mt-0 mb-8 mx-0 text-center">
-                <Image
+                <BaseImage
                     className="w-full h-full rounded-2xl object-cover"
                     loaderUrl="/api/image"
                     src={post.image}

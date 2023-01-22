@@ -1,6 +1,6 @@
 import { Link } from "@remix-run/react";
 import type { Post } from "@prisma/client";
-import Image from "remix-image";
+import { BaseImage } from "remix-image";
 import dayjs from "dayjs"
 
 interface MiniPostProps {
@@ -20,18 +20,11 @@ export default function MiniPost({ posts, heading }: MiniPostProps) {
                     <article className="mb-8 flex" key={post.slug}>
                         <div className="mr-4">
                             <Link to={`/posts/${post.slug}`} prefetch="render">
-                                <Image
+                                <BaseImage
                                     className="w-full h-full rounded-lg"
                                     loaderUrl="/api/image"
                                     src={post.image}
-                                    responsive={[
-                                        {
-                                            size: {
-                                                width: 80,
-                                                height: 80,
-                                            },
-                                        },
-                                    ]}
+                                    width="80"
                                 />
                             </Link>
                         </div>
