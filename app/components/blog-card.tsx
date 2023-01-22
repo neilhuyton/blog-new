@@ -16,7 +16,7 @@ export function BlogCard({ post }: BlogCardProps) {
     return (
         <article className="flex flex-wrap sm:flex-nowrap bg-panel-light dark:bg-panel-dark p-8 rounded-2xl shadow-l dark:shadow-d mb-12" key={post.slug}>
             <div className="sm:mr-8 mb-8 sm:mb-0">
-                <Link to={`${post.slug}`}>
+                <Link to={`${post.slug}`} prefetch="intent">
                     <BaseImage
                         className="rounded-xl"
                         loaderUrl="/api/image"
@@ -28,7 +28,7 @@ export function BlogCard({ post }: BlogCardProps) {
             <div className="flex=[1-1-300px] md:relative">
                 <Tags tags={tags} />
                 <h2 className="mt-0 mb-5 text-3xl font-semibold leading-4xl">
-                    <Link to={`${post.slug}`}>{post.title}</Link>
+                    <Link to={`${post.slug}`} prefetch="intent">{post.title}</Link>
                 </h2>
                 <div className="post-excerpt mb-4 leading-6 h-auto overflow-hidden">
                     {post.description}
