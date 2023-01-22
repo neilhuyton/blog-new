@@ -22,6 +22,7 @@
     "validate": "run-p \"test -- --run\" lint typecheck test:e2e:run"
   },
   "dependencies": {
+    "@next-boost/hybrid-disk-cache": "^0.3.0",
     "@prisma/client": "^4.9.0",
     "@remix-run/node": "^1.11.1",
     "@remix-run/react": "^1.11.1",
