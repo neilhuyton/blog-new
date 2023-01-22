@@ -15,22 +15,22 @@ export function BlogCard({ post }: BlogCardProps) {
 
     return (
         <article className="flex flex-wrap sm:flex-nowrap bg-panel-light dark:bg-panel-dark p-8 rounded-2xl shadow-l dark:shadow-d mb-12" key={post.slug}>
-            <div className="sm:mr-8 mb-8 sm:mb-0">
+            <div className="sm:mr-8 mb-8 sm:mb-0 min-w-[250px]">
                 <Link to={`${post.slug}`} prefetch="intent">
                     <BaseImage
-                        className="rounded-xl"
+                        className="rounded-xl w-[250px]"
                         loaderUrl="/api/image"
                         src={post.image}
                         width={272}
                     />
                 </Link>
             </div>
-            <div className="flex=[1-1-300px] md:relative">
+            <div className="">
                 <Tags tags={tags} />
                 <h2 className="mt-0 mb-5 text-3xl font-semibold leading-4xl">
                     <Link to={`${post.slug}`} prefetch="intent">{post.title}</Link>
                 </h2>
-                <div className="post-excerpt mb-4 leading-6 h-auto overflow-hidden">
+                <div className="mb-4 leading-6">
                     {post.description}
                 </div>
                 <div className="text-sm flex text-meta md:absolute md:bottom-0">

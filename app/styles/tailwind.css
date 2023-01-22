@@ -1068,10 +1068,6 @@ video {
   display: flex;
 }
 
-.h-auto {
-  height: auto;
-}
-
 .h-5 {
   height: 1.25rem;
 }
@@ -1100,12 +1096,28 @@ video {
   width: 100%;
 }
 
+.w-\[272px\] {
+  width: 272px;
+}
+
 .w-5 {
   width: 1.25rem;
 }
 
 .w-2 {
   width: 0.5rem;
+}
+
+.w-\[250px\] {
+  width: 250px;
+}
+
+.min-w-\[272px\] {
+  min-width: 272px;
+}
+
+.min-w-\[250px\] {
+  min-width: 250px;
 }
 
 .max-w-screen-md {
@@ -1130,10 +1142,6 @@ video {
 
 .justify-between {
   justify-content: space-between;
-}
-
-.overflow-hidden {
-  overflow: hidden;
 }
 
 .rounded-2xl {
@@ -1386,10 +1394,6 @@ video {
 @media (min-width: 768px) {
   .md\:absolute {
     position: absolute;
-  }
-
-  .md\:relative {
-    position: relative;
   }
 
   .md\:bottom-0 {
