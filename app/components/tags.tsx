@@ -13,7 +13,7 @@ export default function Tags({ tags, showHeader = false }: TagsProps) {
             <div className="mb-1 flex flex-wrap">
                 {tags.map((tag: Tag) => (
                     <Link
-                        to={`/tag/${tag.slug}`}
+                        to={`${tag.slug}`}
                         className="text-sm mt-0 mr-3 mb-4 ml-0 bg-tag-light dark:bg-tag-dark flex text-center h-8 leading-8 py-0 px-3 rounded-2xl items-center transition duration-250"
                         key={tag.slug}>
                         <>

@@ -19,7 +19,7 @@ export default function MiniPost({ posts, heading }: MiniPostProps) {
                 return (
                     <article className="mb-8 flex" key={post.slug}>
                         <div className="mr-4">
-                            <Link to={`/posts/${post.slug}`} prefetch="render">
+                            <Link to={`${post.slug}`} prefetch="render">
                                 <BaseImage
                                     className="w-full h-full rounded-lg"
                                     loaderUrl="/api/image"
@@ -30,7 +30,7 @@ export default function MiniPost({ posts, heading }: MiniPostProps) {
                         </div>
                         <div className="relative">
                             <h3 className="font-medium leading-6 mb-2 mt-0">
-                                <Link to={`/posts/${post.slug}`} prefetch="render">{post.title}</Link>
+                                <Link to={`${post.slug}`} prefetch="render">{post.title}</Link>
                             </h3>
                             <div className="text-sm flex text-meta absolute bottom-0">
                                 <time className="mr-4" dateTime="2022-04-24">
