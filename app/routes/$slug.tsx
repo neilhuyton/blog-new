@@ -7,67 +7,72 @@ import invariant from "tiny-invariant";
 import { BaseImage } from "remix-image";
 import Tags from "~/components/tags";
 import { md_gallery } from "~/utils/md-gallery";
-import dayjs from "dayjs"
+import dayjs from "dayjs";
 
 import { getPost } from "~/models/post.server";
 
 marked.setOptions({
-    highlight: function (code: string, lang: string) {
-        const hljs = require("highlight.js/lib/common");
-        const language: string = hljs.getLanguage(lang) ? lang : "plaintext";
+  highlight: function (code: string, lang: string) {
+    const hljs = require("highlight.js/lib/common");
+    const language: string = hljs.getLanguage(lang) ? lang : "plaintext";
 
-        return hljs.highlight(code, { language }).value;
-    },
-    langPrefix: "hljs language-",
-})
+    return hljs.highlight(code, { language }).value;
+  },
+  langPrefix: "hljs language-",
+});
 
 export const loader = async ({ params }: LoaderArgs) => {
-    invariant(params.slug, `params.slug is required`);
+  invariant(params.slug, `params.slug is required`);
 
-    const post = await getPost(params.slug);
-    invariant(post, `Post not found: ${params.slug}`);
+  const post = await getPost(params.slug);
+  invariant(post, `Post not found: ${params.slug}`);
 
-    const html = marked(post.markdown);
-    return json({ post, html });
+  const html = marked(post.markdown);
+  return json({ post, html });
 };
 
 export default function PostSlug() {
-    const { post, html } = useLoaderData<typeof loader>();
-    const tags = JSON.parse(post.tags);
-    const date = dayjs(post.createdAt).format('MMM DD, YYYY');
+  const { post, html } = useLoaderData<typeof loader>();
+  const tags = JSON.parse(post.tags);
+  console.log("tags", tags);
+  const date = dayjs(post.createdAt).format("MMM DD, YYYY");
 
-    useEffect(() => {
-        md_gallery({
-            'class_name': 'lightbox',
-        });
-    }, [])
+  useEffect(() => {
+    md_gallery({
+      class_name: "lightbox",
+    });
+  }, []);
 
-    return (
-        <article className="bg-panel-light dark:bg-panel-dark shadow-l dark:shadow-d p-8 rounded-2xl">
-            <figure className="w-full mt-0 mb-8 mx-0 text-center">
-                <BaseImage
-                    className="w-full h-full rounded-2xl object-cover"
-                    loaderUrl="/api/image"
-                    src={post.image}
-                />
-            </figure>
-            <header className="max-w-screen-md lg:px-8 mt-0 mb-8 mx-auto">
-                <Tags tags={tags} />
-                <h1 className="mt-0 mb-5 text-4xl font-semibold leading-4xl">
-                    {post.title}
-                </h1>
-                <div className="text-sm flex text-meta">
-                    <span className="mr-4">
-                        {post.author}
-                    </span>
-                    <time className="mr-4" dateTime="2022-04-24">
-                        {date}
-                    </time>
-                </div>
-            </header>
-            <div className="max-w-screen-md lg:px-8 my-0 mx-auto">
-                <div className="prose dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: html }} />
-            </div>
-        </article>
-    );
+  return (
+    <article className="bg-panel-light dark:bg-panel-dark shadow-l dark:shadow-d p-8 rounded-2xl">
+      {/* bg-tag-react bg-tag-remix bg-tag-freedombox */}
+      <figure
+        className={`w-full mt-0 mb-8 mx-0 text-center bg-tag-${tags[0].slug} rounded-2xl`}
+      >
+        <BaseImage
+          className="h-full rounded-2xl mx-auto"
+          loaderUrl="/api/image"
+          src={post.image}
+        />
+      </figure>
+      <header className="max-w-screen-md lg:px-8 mt-0 mb-8 mx-auto">
+        <Tags tags={tags} />
+        <h1 className="mt-0 mb-5 text-4xl font-semibold leading-4xl">
+          {post.title}
+        </h1>
+        <div className="text-sm flex text-meta">
+          <span className="mr-4">{post.author}</span>
+          <time className="mr-4" dateTime="2022-04-24">
+            {date}
+          </time>
+        </div>
+      </header>
+      <div className="max-w-screen-md lg:px-8 my-0 mx-auto">
+        <div
+          className="prose dark:prose-invert max-w-none"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      </div>
+    </article>
+  );
 }

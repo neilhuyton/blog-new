@@ -111,7 +111,7 @@ async function seed() {
       image: "/images/blog/1.jpg",
       tags: "{ tags: ['FreedomBox'] }",
       author: "Neil",
-      isFeatured: true
+      isFeatured: true,
     },
     {
       slug: "my-third-post",
@@ -125,7 +125,7 @@ async function seed() {
       image: "/images/blog/1.jpg",
       tags: "{ tags: ['FreedomBox'] }",
       author: "Neil",
-      isFeatured: true
+      isFeatured: true,
     },
     {
       slug: "my-fourth-post",
@@ -139,7 +139,7 @@ async function seed() {
       image: "/images/blog/1.jpg",
       tags: "{ tags: ['FreedomBox'] }",
       author: "Neil",
-      isFeatured: true
+      isFeatured: true,
     },
     {
       slug: "my-fifth-post",
@@ -153,7 +153,7 @@ async function seed() {
       image: "/images/blog/1.jpg",
       tags: "{ tags: ['FreedomBox'] }",
       author: "Neil",
-      isFeatured: true
+      isFeatured: true,
     },
     {
       slug: "90s-mixtape",
@@ -168,7 +168,7 @@ async function seed() {
       image: "/images/blog/1.jpg",
       tags: "{ tags: ['FreedomBox'] }",
       author: "Neil",
-      isFeatured: true
+      isFeatured: true,
     },
   ];
 
