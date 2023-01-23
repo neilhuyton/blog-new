@@ -24,7 +24,6 @@ module.exports = {
       "tag-react": "#FD94FF",
       "tag-remix": "#04baf6",
       "tag-freedombox": "#f18509",
-      white: "#FFFFFF",
     },
     screens: {
       sm: "576px",
@@ -41,11 +40,6 @@ module.exports = {
       d: "0 10px 10px rgba(0,0,0,0.2)",
     },
     extend: {
-      // backgroundImage: (theme) => ({
-      //   check: "url('/icons/check.svg')",
-      //   landscape: "url('/images/landscape/2.jpg')",
-      // }),
-
       typography: {
         DEFAULT: {
           css: {

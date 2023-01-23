@@ -11,7 +11,6 @@ interface BlogCardProps {
 
 export function BlogCard({ post }: BlogCardProps) {
   const tags = JSON.parse(post.tags);
-  console.log("tags", tags);
   const date = dayjs(post.createdAt).format("MMM DD, YYYY");
 
   return (
@@ -20,7 +19,7 @@ export function BlogCard({ post }: BlogCardProps) {
       key={post.slug}
     >
       <div
-        className={`sm:mr-8 mb-8 sm:mb-0 bg-tag-${tags[0].slug} sm:bg-white w-full md:w-[250px] rounded-2xl`}
+        className={`sm:mr-8 mb-8 sm:mb-0 bg-tag-${tags[0].slug} sm:bg-panel-light sm:dark:bg-panel-dark w-full md:w-[250px] rounded-2xl`}
       >
         <Link to={`${post.slug}`} prefetch="intent">
           <BaseImage
