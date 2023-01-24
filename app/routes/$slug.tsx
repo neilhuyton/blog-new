@@ -5,10 +5,10 @@ import { useLoaderData } from "@remix-run/react";
 import { marked } from "marked";
 import invariant from "tiny-invariant";
 import { BaseImage } from "remix-image";
-import Tags from "~/components/tags";
-import { md_gallery } from "~/utils/md-gallery";
 import dayjs from "dayjs";
 
+import Tags from "~/components/tags";
+import { md_gallery } from "~/utils/md-gallery";
 import { getPost } from "~/models/post.server";
 
 marked.setOptions({

@@ -9,6 +9,8 @@ import {
   ScrollRestoration,
   useLoaderData,
 } from "@remix-run/react";
+import highlight from "highlight.js/styles/night-owl.css";
+import remixImageStyles from "remix-image/remix-image.css";
 
 import {
   ThemeBody,
@@ -17,19 +19,15 @@ import {
   useTheme,
 } from "~/utils/theme-provider";
 import { getThemeSession } from "~/utils/theme.server";
-
-import highlight from "highlight.js/styles/night-owl.css";
+import { getPosts, getFeaturedPosts } from "~/models/post.server";
+import { getTags } from "~/models/tag.server";
 
 import tailwindStyles from "./styles/tailwind.css";
 import globalStyles from "./styles/global.css";
-import remixImageStyles from "remix-image/remix-image.css";
-
 import { Footer } from "./components/footer";
 import { Header } from "./components/header";
 import { Sidebar } from "./components/sidebar";
 
-import { getPosts, getFeaturedPosts } from "~/models/post.server";
-import { getTags } from "~/models/tag.server";
 
 export const links: LinksFunction = () => {
   return [

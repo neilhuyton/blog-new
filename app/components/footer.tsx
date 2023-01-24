@@ -1,7 +1,8 @@
 import type { Post, Tag } from "@prisma/client";
 
-import MiniPosts from "./mini-posts";
 import Tags from "~/components/tags";
+
+import MiniPosts from "./mini-posts";
 
 interface FooterProps {
   featuredPosts: Post[];

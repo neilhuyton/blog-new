@@ -1,8 +1,8 @@
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
+import type { Post } from "@prisma/client";
 
 import { BlogCard } from "~/components/blog-card";
-import type { Post } from "@prisma/client";
 import { getPosts } from "~/models/post.server";
 
 export const loader = async () => {
