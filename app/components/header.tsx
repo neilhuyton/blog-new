@@ -1,4 +1,5 @@
 import { Link } from "@remix-run/react";
+import { BaseImage } from "remix-image";
 
 import { Theme, useTheme } from "~/utils/theme-provider";
 
@@ -16,10 +17,10 @@ export function Header() {
       <div className="px-4">
         <div className="shadow-l dark:shadow-d bg-panel-light dark:bg-panel-dark py-5 px-8 rounded-2xl flex flex-wrap items-center justify-between">
           <Link to="/" prefetch="render">
-            <img
-              src="https://neon.gbjsolution.com/content/images/2022/12/logo-light.svg"
-              alt="Neon"
+            <BaseImage
               className="max-h-6"
+              loaderUrl="/api/image"
+              src="/images/blog/logo9-light.png"
             />
           </Link>
           <nav

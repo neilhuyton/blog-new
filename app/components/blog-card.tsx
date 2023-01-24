@@ -13,17 +13,19 @@ export function BlogCard({ post }: BlogCardProps) {
   const tags = JSON.parse(post.tags);
   const date = dayjs(post.createdAt).format("MMM DD, YYYY");
 
+  // bg-tag-${tags[0].slug} sm:bg-panel-light sm:dark:bg-panel-dark
+
   return (
     <article
       className="flex flex-wrap sm:flex-nowrap bg-panel-light dark:bg-panel-dark p-8 rounded-2xl shadow-l dark:shadow-d mb-12"
       key={post.slug}
     >
       <div
-        className={`sm:mr-8 mb-8 sm:mb-0 bg-tag-${tags[0].slug} sm:bg-panel-light sm:dark:bg-panel-dark md:w-[250px] md:h-[250px] w-full h-full  rounded-2xl`}
+        className={`sm:mr-8 mb-8 sm:mb-0   md:w-[250px] md:h-[250px] w-full h-full  rounded-2xl border-solid border-4 border-tag-light dark:border-tag-dark`}
       >
         <Link to={`/${post.slug}`} prefetch="intent">
           <BaseImage
-            className="rounded-xl sm:max-w-[250px] sm:max-h-[250px] m-auto"
+            className="rounded-xl sm:max-w-[250px] sm:max-h-[250px] m-auto "
             loaderUrl="/api/image"
             src={post.image}
           />

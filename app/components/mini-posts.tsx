@@ -20,7 +20,7 @@ export default function MiniPost({ posts, heading }: MiniPostProps) {
             <div className="mr-4 min-w-[80px]">
               <Link to={`${post.slug}`} prefetch="render">
                 <BaseImage
-                  className="rounded-xl w-[80px]"
+                  className="rounded-xl w-[80px] border-solid border-4 border-tag-light dark:border-tag-dark"
                   loaderUrl="/api/image"
                   src={post.image}
                   width="80"

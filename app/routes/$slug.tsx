@@ -46,15 +46,15 @@ export default function PostSlug() {
     <article className="bg-panel-light dark:bg-panel-dark shadow-l dark:shadow-d p-8 rounded-2xl">
       {/* bg-tag-react bg-tag-remix bg-tag-freedombox */}
       <figure
-        className={`w-full mt-0 mb-8 mx-0 text-center bg-tag-${tags[0].slug} rounded-2xl`}
+        className={`w-full mt-0 mb-8 mx-0 text-center  rounded-2xl border-solid border-2 border-tag-light dark:border-tag-dark`}
       >
         <BaseImage
-          className="h-full rounded-2xl mx-auto"
+          className="h-full rounded-2xl mx-auto "
           loaderUrl="/api/image"
           src={post.image}
         />
       </figure>
-      <header className="max-w-screen-md lg:px-8 mt-0 mb-8 mx-auto">
+      <header className="max-w-screen-md lg:px-8 mt-0 mb-16 mx-auto">
         <Tags tags={tags} />
         <h1 className="mt-0 mb-5 text-4xl font-semibold leading-4xl">
           {post.title}
