@@ -32,7 +32,7 @@ export function BlogCard({ post }: BlogCardProps) {
       <div className="relative">
         <Tags tags={tags} />
         <h2 className="mt-0 mb-5 text-3xl font-semibold leading-4xl text-2xl md:text-3xl">
-          <Link to={`${post.slug}`} prefetch="intent">
+          <Link to={`/${post.slug}`} prefetch="intent">
             {post.title}
           </Link>
         </h2>
