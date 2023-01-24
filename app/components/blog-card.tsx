@@ -21,7 +21,7 @@ export function BlogCard({ post }: BlogCardProps) {
       <div
         className={`sm:mr-8 mb-8 sm:mb-0 bg-tag-${tags[0].slug} sm:bg-panel-light sm:dark:bg-panel-dark md:w-[250px] md:h-[250px] w-full h-full  rounded-2xl`}
       >
-        <Link to={`${post.slug}`} prefetch="intent">
+        <Link to={`/${post.slug}`} prefetch="intent">
           <BaseImage
             className="rounded-xl sm:max-w-[250px] sm:max-h-[250px] m-auto"
             loaderUrl="/api/image"
