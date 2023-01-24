@@ -46,7 +46,7 @@ export default function PostSlug() {
     <article className="bg-panel-light dark:bg-panel-dark shadow-l dark:shadow-d p-8 rounded-2xl">
       {/* bg-tag-react bg-tag-remix bg-tag-freedombox */}
       <figure
-        className={`w-full mt-0 mb-8 mx-0 text-center  rounded-2xl border-solid border-2 border-tag-light dark:border-tag-dark`}
+        className={`w-full mt-0 mb-8 mx-0 text-center  rounded-2xl border-solid border-4 border-tag-light dark:border-tag-dark`}
       >
         <BaseImage
           className="h-full rounded-2xl mx-auto "
