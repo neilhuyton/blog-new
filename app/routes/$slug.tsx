@@ -34,7 +34,6 @@ export const loader = async ({ params }: LoaderArgs) => {
 export default function PostSlug() {
   const { post, html } = useLoaderData<typeof loader>();
   const tags = JSON.parse(post.tags);
-  console.log("tags", tags);
   const date = dayjs(post.createdAt).format("MMM DD, YYYY");
 
   useEffect(() => {
