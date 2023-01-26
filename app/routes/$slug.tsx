@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import type { LoaderArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
@@ -7,9 +6,11 @@ import invariant from "tiny-invariant";
 import { BaseImage } from "remix-image";
 import dayjs from "dayjs";
 
+import { lightbox } from "~/utils/lightbox";
 import Tags from "~/components/tags";
-import { md_gallery } from "~/utils/md-gallery";
 import { getPost } from "~/models/post.server";
+
+const lb = lightbox();
 
 marked.setOptions({
   highlight: function (code: string, lang: string) {
@@ -36,11 +37,7 @@ export default function PostSlug() {
   const tags = JSON.parse(post.tags);
   const date = dayjs(post.createdAt).format("MMM DD, YYYY");
 
-  useEffect(() => {
-    md_gallery({
-      class_name: "lightbox",
-    });
-  }, []);
+  lb;
 
   return (
     <article className="bg-panel-light dark:bg-panel-dark shadow-l dark:shadow-d p-8 rounded-2xl">

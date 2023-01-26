@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import type { LinksFunction, LoaderArgs, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import {
@@ -61,7 +62,6 @@ export const meta: MetaFunction = () => ({
 
 function App() {
   const data = useLoaderData<typeof loader>();
-
   const latestPosts = data.posts.slice(0, 3);
   const [theme] = useTheme();
 
@@ -100,11 +100,11 @@ function App() {
         <div className="flex flex-col min-h-screen xl:container">
           <Header />
 
-          <div className="flex flex-wrap xl:flex-nowrap">
+          <div className="flex flex-wrap xl:flex-nowrap relative">
             <div className="xl:basis-2/3 px-5 w-full">
               <Outlet />
             </div>
-            <div className="xl:basis-1/3 px-5 w-full mt-10 xl:mt-0">
+            <div className="xl:basis-1/3 px-5 w-full mt-10 xl:mt-0 sticky top-0">
               <Sidebar
                 featuredPosts={data.featuredPosts}
                 latestPosts={latestPosts}
@@ -129,7 +129,7 @@ function App() {
 
 export default function AppWithProviders() {
   const data = useLoaderData<typeof loader>();
-
+  
   return (
     <ThemeProvider specifiedTheme={data.theme}>
       <App />
