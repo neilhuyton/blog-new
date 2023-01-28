@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import type { LinksFunction, LoaderArgs, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import {
@@ -129,7 +128,7 @@ function App() {
 
 export default function AppWithProviders() {
   const data = useLoaderData<typeof loader>();
-  
+
   return (
     <ThemeProvider specifiedTheme={data.theme}>
       <App />

@@ -10,24 +10,4 @@ body {
   margin: 0;
 }
 
-/* #f18509 #B43ADF #1dbf2f #04baf6 #4d61ff #fd94ff ##E10689 */
-
-.lightbox {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.open {
-  display: flex;
-  justify-content: center;
-}
-
-.open img {
-  margin: auto;
-}
+/* #f18509 #B43ADF #1dbf2f #04baf6 #4d61ff #fd94ff #E10689 */

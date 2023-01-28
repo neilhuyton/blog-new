@@ -24,6 +24,7 @@ module.exports = {
       "tag-react": "#FD94FF",
       "tag-remix": "#04baf6",
       "tag-freedombox": "#f18509",
+      "black": "#000000",
     },
     screens: {
       sm: "576px",
